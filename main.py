@@ -23,6 +23,7 @@ from pyecharts.charts import Map
 filepath = sys.path[0]  #get file path
 
 # 获取部分国家数据
+# Get some country data
 def crawlsomecountry():
     first_url = "https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoCountryMerge"
     res = requests.post(first_url)
@@ -78,6 +79,7 @@ def crawlsomecountry():
 
 
 # 获取各大洲数据
+# Get data on all continents
 def crawleverycontinent():
     q_url = "https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis,FAutoContinentStatis,FAutoGlobalDailyList,FAutoCountryConfirmAdd"
     res = requests.post(q_url)
@@ -118,6 +120,7 @@ def crawleverycontinent():
 
 
 # 获取中国每日数据
+# Get daily data from China
 def CrawlChinadata():
     q_url = "https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=chinaDayList,chinaDayAddList,cityStatis,nowConfirmStatis,provinceCompare"
     res = requests.post(q_url)
@@ -139,6 +142,7 @@ def CrawlChinadata():
 
 
 # 处理各洲数据、绘图（所有）
+# Process data and draw pictures of all continents (all)
 def dealcontinentdata():
 
     #print(filepath)    #just to test the file path
@@ -169,6 +173,7 @@ def dealcontinentdata():
 
 
 # 处理各洲数据、绘图（三月份）
+# Process data and draw pictures of all continents (March)
 def dealcontinentdatathree():
 
     #df = pd.read_csv("/Users/caizhen/Desktop/疫情分析项目/各洲的数据.csv")
@@ -198,6 +203,7 @@ def dealcontinentdatathree():
 
 
 # 联合国五大国绘图（所有）
+# Drawings of the five major nations of the United Nations (all)
 def dealwithfivecountry():
     df1 = pd.read_csv("foreign.csv", dtype={"date": str})
     df2 = pd.read_csv("chinadailyconfirm.csv", dtype={"date": str})
@@ -242,6 +248,7 @@ def dealwithfivecountry():
 
 
 # 联合国五大国绘图（三月）
+# Drawings of the five major nations of the United Nations (March)
 def dealwithfivecountrythree():
     df1 = pd.read_csv("foreign.csv", dtype={"date": str})
     df2 = pd.read_csv("chinadailyconfirm.csv", dtype={"date": str})
@@ -304,6 +311,7 @@ def dealwithfivecountrythree():
 
 
 # 获取日本数据
+# Get Japanese data
 def crawljapan():
     url = "https://voice.baidu.com/newpneumonia/get?target=trend&isCaseIn=1&stage=publish&callback=jsonp_1606311406202_98489"
     headers = {
@@ -328,6 +336,7 @@ def crawljapan():
     b.to_csv("japandata.csv")
 
 # 获取印度数据
+# Get Indian data
 def crawlindian():
     url = "https://voice.baidu.com/newpneumonia/get?target=trend&isCaseIn=1&stage=publish&callback=jsonp_1606311406202_98489"
     headers = {
@@ -349,6 +358,7 @@ def crawlindian():
     b.to_csv("indiandata.csv")
 
 # 亚洲地区处理
+# Process data in Asia
 def dealwithAsian():
     japan = pd.read_csv("japandata.csv")
     indian = pd.read_csv("indiandata.csv")
@@ -379,7 +389,8 @@ def dealwithAsian():
     plt.title("Asian confirm")
     plt.show()
 
-#排名
+# 排名
+# Rank
 def crawl5():
     q_url = 'https://api.inews.qq.com/newsqa/v1/automation/foreign/country/ranklist'
     res = requests.post(q_url)
@@ -389,6 +400,7 @@ def crawl5():
     return data_i
 
 # 世界当日数据
+# World daily Data
 def run4():
     df = pd.read_csv("chinadailyconfirm.csv")
     data5 = crawl5()
@@ -676,8 +688,9 @@ namemap = {
 }
 new_dict = {v: k for k, v in namemap.items()}
 
-'''
+
 # 死亡率全球(除中国)
+# Mortality worldwide (except China)
 def dealwithdeadrate():
     data = pd.read_csv("data.csv")
     data["deadrate"] = data["dead"] / data["confirm"]
@@ -707,10 +720,11 @@ def dealwithdeadrate():
         )
             .render("./运行结果/deadrate.html")
     )
-'''
+
 
 
 # 死亡率五常
+# Mortality rate(five country)
 def dealwithdeadratefivecountry():
     data = pd.read_csv("data.csv")
     # print(data["dead"])
@@ -768,6 +782,7 @@ def dealwithdeadratefivecountry():
 
 
 # 治愈率降序全球（除中国）
+# Cure rate in descending order worldwide (except China)
 def dealwithhealrate():
     data = pd.read_csv("data.csv")
     # print(data["dead"])
@@ -805,6 +820,7 @@ def dealwithhealrate():
 
 
 # 治愈率降序五常
+# Cure rate in descending order(five country)
 def dealwithhealratefivecountry():
     data = pd.read_csv("data.csv")
     # print(data["dead"])
@@ -870,6 +886,7 @@ def dealwithhealratefivecountry():
     )
 
 # 中国城市每日新增
+# Chinese cities daily data
 def chinacity():
     q_url = "https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=chinaDayList,chinaDayAddList,cityStatis,nowConfirmStatis,provinceCompare"
     res = requests.post(q_url)
@@ -907,6 +924,7 @@ def chinacity():
 
 
 # 浙江省城市关系
+# Zhejiang province daily data
 def chinacities():
     data = pd.read_csv("浙江省城市.csv")
     data_time = pd.DataFrame(data["date"])

@@ -29,94 +29,94 @@ Some of the API which provides the data have stopped updating in 2020.
 ### Get Data
 
 ```python
-# 处理各洲数据、绘图（所有）
-def dealcontinentdata()
+# Get some country data
+def crwalsomecountry()
 ```
 
 ```python
-# 获取各大洲数据
+# Get data on all continents
 def crawleverycontinent()
 ```
 
 ```python
-# 获取中国每日数据
+# Get daily data from China
 def CrawlChinadata()
 ```
 
 ```python
-# 获取日本数据
+# Get Japanese data
 def crawljapan()
 ```
 
 ```python
-# 获取印度数据
+# Get Indian data
 def crawlindian()
 ```
 
 ```python
-# 排名
+# Rank
 def crawl5()
 ```
 
 ### 数据处理及可视化
 
 ```python
-# 处理各洲数据、绘图（所有）
+# Process data and draw pictures of all continents (all)
 def dealcontinentdata()
 ```
 
 ```python
-# 处理各洲数据、绘图（三月份）
+# Process data and draw pictures of all continents (March)
 def dealcontinentdatathree()
 ```
 
 ```python
-# 联合国五大国绘图（所有）
+# Drawings of the five major nations of the United Nations (all)
 def dealwithfivecountry()
 ```
 
 ```python
-# 联合国五大国绘图（三月）
+# Drawings of the five major nations of the United Nations (March)
 def dealwithfivecountrythree()
 ```
 
 ```python
-# 亚洲地区处理
+# Process data in Asia
 def dealwithAsian()
 ```
 
 ```python
-# 世界当日数据
+# World daily Data
 def run4()
 ```
 
 ```python
-# 死亡率全球(除中国)
+# Mortality worldwide (except China)
 def dealwithdeadrate()
 ```
 
 ```python
-# 死亡率五常
+# Mortality rate(five country)
 def dealwithdeadratefivecountry()
 ```
 
 ```python
-# 治愈率降序全球（除中国）
+# Cure rate in descending order worldwide (except China)
 def dealwithhealrate()
 ```
 
 ```python
-# 治愈率降序五常
+# Cure rate in descending order(five country)
 def dealwithhealratefivecountry()
 ```
 
 ```python
-# 中国城市每日新增
+# Chinese cities daily data
 def chinacity()
 ```
 
 ```python
-# 浙江省城市关系
+# Zhejiang province daily data
 def chinacities()
 ```
 
